@@ -6,7 +6,7 @@ nano /etc/docker/daemon.json
 
 ~~~~
 {
-     "insecure-registries":["37.32.15.56:5000"]
+     "insecure-registries":["http://your-ip:5000"]
 }
 ~~~~
 
