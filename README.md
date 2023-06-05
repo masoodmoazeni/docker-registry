@@ -36,7 +36,7 @@ systemctl stop docker
 systemctl start docker
 ~~~~
 
--example 
+example 
 
 ```
 docker pull httpd
