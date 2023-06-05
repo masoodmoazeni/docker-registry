@@ -36,6 +36,13 @@ systemctl stop docker
 systemctl start docker
 ~~~~
 
+--example 
+
+```
+docker pull httpd
+docker tag httpd your-ip:5000/httpd
+docker push your-ip:5000/httpd
+```
 docker registry can map on port 80
 
 and you must forwarding this port but ui for docker registry ist not work
