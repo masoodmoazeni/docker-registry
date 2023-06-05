@@ -43,4 +43,4 @@ and you must forwarding this port but ui for docker registry ist not work
 you must create and setting secure domain on this host for secure host and set domain for easy way for use this docker registery
 
 source
-- virgool [Docker Registry with shiva]([https://hub.docker.com/_/postgres/](salam))
+- tuturial docker registry [youtube](https://www.youtube.com/watch?v=O_NMIZJ1qvw/) instance
