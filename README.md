@@ -43,4 +43,4 @@ and you must forwarding this port but ui for docker registry ist not work
 you must create and setting secure domain on this host for secure host and set domain for easy way for use this docker registery
 
 source
-- tuturial docker registry from youtube [youtube](https://www.youtube.com/watch?v=O_NMIZJ1qvw/[https://www.youtube.com/watch?v=O_NMIZJ1qvw/]) 
+- tuturial docker registry from youtube (https://www.youtube.com/watch?v=O_NMIZJ1qvw/) 
