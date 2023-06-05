@@ -5,7 +5,7 @@ after that get reposity from github
 you must run this command
 
 ```
-docker-cmpose up -d
+docker-compose up -d
 ```
 
 after that you must run this command for generate user and password for docker registry
@@ -21,7 +21,7 @@ curl -X GET https://myregistry:5000/v2/_catalog
 
 after that if use to another host for pull and push image from docker registry 
 
-you must this command and create on evry host
+you must this command and create on every host
 
 nano /etc/docker/daemon.json
 
@@ -35,3 +35,9 @@ afetr that you must run these command
 systemctl stop docker
 systemctl start docker
 ~~~~
+
+docker registry can map on port 80
+
+and you must forwarding this port but ui for docker registry ist not work
+
+you must create and setting secure domain on this host for secure host and set domain for easy way for use this docker registery
