@@ -1,26 +1,33 @@
-version: '2.0'
+version: '3.7'
 services:
   registry:
-    image: registry:latest
+    image: registry:2.7
+    container_name: registry
     restart: always
     ports:
       - 5000:5000
     volumes:
-      - ./registry-data:/var/lib/registry
+      - ./test:/var/lib/registry
+      - ./config.yml:/etc/docker/registry/config.yml
+      - ./auth/passwd:/auth
     networks:
       - registry-ui-net
-
   ui:
     image: joxit/docker-registry-ui:latest
-    environment:
-      - SINGLE_REGISTRY=true
-      - REGISTRY_TITLE=My Private Docker Registry
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./nginx/fullchain.pem:/etc/nginx/certs/fullchain.pem
-      - ./nginx/privkey.pem:/etc/nginx/certs/privkey.pem
+    container_name: ui
+    restart: always
     ports:
-      - 80:80
-      - 443:443
+      - 8070:80
+    environment:
+      - REGISTRY_TITLE=Private Docker Registry
+      - NGINX_PROXY_PASS_URL=http://registry:5000
+      - DELETE_IMAGES=true
+      - SINGLE_REGISTRY=true
+    networks:
+      - registry-ui-net
     depends_on:
       - registry
+networks:
+  registry-ui-net:
+    driver: bridge
+    name: registry-network
