@@ -43,6 +43,11 @@ docker pull httpd
 docker tag httpd your-ip:5000/httpd
 docker push your-ip:5000/httpd
 ```
+
+for list repository on registry
+```
+curl -X GET https://myregistry:5000/v2/_catalog
+```
 docker registry can map on port 80
 
 and you must forwarding this port but ui for docker registry ist not work
